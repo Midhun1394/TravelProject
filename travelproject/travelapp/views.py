@@ -1,0 +1,18 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+
+from travelapp.models import place, team
+
+
+def demo(request):
+    obj=place.objects.all()
+    obj1=team.objects.all()
+    return render(request, 'index.html',{'result':obj,'results':obj1})
+#def addition(request):
+  #  x = int(request.GET['num1'])
+   # y = int(request.GET['num2'])
+   # res = x + y
+   # mul = x * y
+   # sub = x - y
+   # div = x / y
+    #return render(request, 'result.html', {'result': res, 'multiplication': mul, 'substraction': sub, 'division': div})
